@@ -769,7 +769,7 @@ found."
 
 (defun irfc-read-heading-name ()
   "Read heading name as a string."
-  (completing-read "Heading name: " irfc-heading-names-list nil t))
+  (completing-read "Heading name: " (nreverse (copy-list irfc-heading-names-list)) nil t))
 
 (defun irfc-read-heading-number ()
   "Read heading number as a string using a heading number found
