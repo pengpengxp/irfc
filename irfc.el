@@ -777,7 +777,7 @@ at point as default."
   (let ((default (irfc-heading-number-at-point)))
     (completing-read
      (concat "Heading number" (if (eq default nil) "" (format " (default %s)" default)) ": ")
-     irfc-heading-numbers-list nil t nil nil default nil)))
+     (nreverse (copy-list irfc-heading-numbers-list)) nil t nil nil default nil)))
 
 (defun irfc-heading-number-at-point ()
   "Returns heading number at point as a string or nil if one is
